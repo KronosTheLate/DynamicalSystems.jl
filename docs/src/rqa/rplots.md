@@ -1,4 +1,4 @@
-# Recurrence Plots
+# Recurrence Matrices and Plots
 ## Recurrence Matrices
 
 A [Recurrence plot](https://en.wikipedia.org/wiki/Recurrence_plot) (which refers to the plot of a matrix) is a way to quantify *recurrences* that occur in a trajectory. A recurrence happens when a trajectory visits the same neighborhood on the phase space that it was at some previous time.
