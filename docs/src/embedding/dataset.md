@@ -1,8 +1,8 @@
 # Numerical Data
 
 !!! info "Timeseries and datasets"
-    The word "timeseries" can be confusing, because it can mean a univariate (also called scalar or one-dimensional) timeseries or a multivariate (also called multi-dimensional) timeseries. 
-    To resolve this confusion, in **DynamicalSystems.jl** we have the following convention: **"timeseries"** is always univariate! it refers to a one-dimensional vector of numbers, which exists with respect to some other one-dimensional vector of numbers that corresponds to a time vector.
+    The word "timeseries" can be confusing, because it can mean a univariate (also called scalar or one-dimensional) timeseries or a multivariate (also called multi-dimensional) timeseries.
+    To resolve this confusion, in **DynamicalSystems.jl** we have the following convention: **"timeseries"** is always univariate! It refers to a one-dimensional vector of numbers, which exists with respect to some other one-dimensional vector of numbers that corresponds to a time vector.
     On the other hand, we use the word **"dataset"** is used to refer to a *multi-dimensional* timeseries, which is of course simply a group/set of one-dimensional timeseries represented as a [`Dataset`](@ref).
     In some documentation strings we use the word "trajectory" instead of "dataset",
     which means an ordered multivariate timeseries.
@@ -14,10 +14,6 @@
 Trajectories, and in general sets in state space, are represented by a structure called `Dataset` in **DynamicalSystems.jl**
 (while timeseries are always standard Julia `Vector`s).
 It is recommended to always [`standardize`](@ref) datasets.
-```@docs
-Dataset
-standardize
-```
 
 In essence a `Dataset` is simply a wrapper for a `Vector` of `SVector`s.
 However, it is visually represented as a matrix, similarly to how numerical data would be printed on a spreadsheet (with time being the *column* direction).
@@ -35,12 +31,23 @@ end
 Most functions from **DynamicalSystems.jl** that manipulate and use multidimensional data are expecting a `Dataset`.
 This allows us to define efficient methods that coordinate well with each other, like e.g. [`embed`](@ref).
 
+```@docs
+Dataset
+standardize
+columns
+```
+
 ## Dataset Functions
 ```@docs
 minima
 maxima
 minmaxima
-columns
+```
+
+## Dataset Distances
+```@docs
+dataset_distance
+datasets_sets_distances
 ```
 
 ## Dataset I/O

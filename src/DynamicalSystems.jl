@@ -18,8 +18,13 @@ export SVector, SMatrix, @SVector, @SMatrix, Size
 # Update messages:
 using Scratch
 display_update = true
-version_number = "2.3.0"
+version_number = "2.4.0"
 update_name = "update_v$(version_number)"
+update_message = """
+\nUpdate message: DynamicalSystems v$(version_number)\n
+- New functions that compute distances between datasets:
+  `dataset_distance` and `datasets_sets_distances`.
+"""
 
 if display_update
     # Get scratch space for this package
@@ -27,11 +32,7 @@ if display_update
     if !isfile(joinpath(versions_dir, update_name))
         printstyled(
             stdout,
-            """
-            \nUpdate message: DynamicalSystems v$(version_number)\n
-            Interactive GUI for exploring dynamical systems are now in the documentation.
-            Made with Makie.jl + InteractiveDynamics.jl!
-            """;
+            update_message;
             color = :light_magenta,
         )
         touch(joinpath(versions_dir, update_name))
