@@ -11,6 +11,7 @@ AttractorsViaProximity
 AttractorsViaRecurrences
 automatic_Δt_basins
 AttractorsViaFeaturizing
+ClusteringConfig
 ```
 
 

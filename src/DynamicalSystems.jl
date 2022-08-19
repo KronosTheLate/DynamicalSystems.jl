@@ -24,6 +24,8 @@ update_message = """
 \nUpdate message: DynamicalSystems v$(version_number)\n
 - New functions that compute distances between datasets:
   `dataset_distance` and `datasets_sets_distances`.
+- Clustering in `AttractorsViaFeaturizing` is now configured via
+  a dedicated struct called `ClusteringConfig`.
 """
 
 if display_update
